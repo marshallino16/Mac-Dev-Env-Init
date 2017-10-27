@@ -107,11 +107,11 @@ cd fonts
 ./install.sh
 cd ..
 rm -rf fonts
-git clone https://github.com/milkbikis/powerline-shell
-mv powerline-shell ~/Documents/powerline-shell
-cd powerline-shell
-./install.py
-ln -s powerline-shell.py ~/powerline-shell.py
+git clone https://github.com/banga/powerline-shell
+mv powerline-shell
+cd ~/Documents/powerline-shell
+python setup.py install
+
 pip install argparse
 
 
