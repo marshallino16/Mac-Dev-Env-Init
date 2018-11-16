@@ -26,7 +26,6 @@ echo 'Brew installed'
 echo 'Installing brew package...'
 
 brew tap caskroom/cask
-brew install caskroom/cask/brew-cask
 
 brew install ruby
 brew install git
@@ -53,7 +52,6 @@ brew cask install vlc
 brew cask install dropbox
 brew cask install filezilla
 brew cask install spectacle
-brew cask install goofy
 brew cask install caffeine
 brew cask install transmission
 brew cask install adobe-creative-cloud
@@ -107,11 +105,11 @@ cd fonts
 ./install.sh
 cd ..
 rm -rf fonts
-git clone https://github.com/banga/powerline-shell
-mv powerline-shell
-cd ~/Documents/powerline-shell
-python setup.py install
-
+git clone https://github.com/milkbikis/powerline-shell
+mv powerline-shell ~/Documents/powerline-shell
+cd powerline-shell
+./install.py
+ln -s powerline-shell.py ~/powerline-shell.py
 pip install argparse
 
 
@@ -194,9 +192,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+#   export EDITOR="vim"
 # else
-#   export EDITOR='mvim'
+#   export EDITOR="mvim"
 # fi
 
 # Compilation flags
@@ -251,7 +249,4 @@ dsym () { mdfind "com_apple_xcode_dsym_uuids == $@" ; }
 # Aliases other
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM
 
-# Aliases trad
-alias trad="trans fr:en '$@'"
-alias tradr="trans en:fr '$@'"
 alias notebook="jupyter notebook --port 9999 --notebook-dir ~/notebook" ' > ~/.zshrc
