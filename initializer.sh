@@ -44,17 +44,17 @@ brew cask install spotify
 brew cask install xampp
 brew cask install sublime-text
 brew cask install sourcetree
-brew cask install pycharm-ce
+brew cask install pycharm
 brew cask install google-chrome
 brew cask install iterm2
 brew cask install mongohub
 brew cask install vlc
 brew cask install dropbox
-brew cask install filezilla
 brew cask install spectacle
 brew cask install caffeine
 brew cask install transmission
 brew cask install adobe-creative-cloud
+brew cask install monitorcontrol
 brew cask cleanup
 
 wget 'https://github.com/noodlewerk/NWPusher/releases/download/0.7.4/pusher.app.zip'
