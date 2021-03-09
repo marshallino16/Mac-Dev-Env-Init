@@ -16,7 +16,8 @@ cd ~/Downloads/
 echo 'Installling brew...'
 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/junior/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
 echo 'Brew installed'
 
 
@@ -25,7 +26,7 @@ echo 'Brew installed'
 
 echo 'Installing brew package...'
 
-brew tap caskroom/cask
+brew tap homebrew/cask
 
 brew install ruby
 brew install git
@@ -42,7 +43,6 @@ echo 'Package installed'
 echo 'Installing softwares...'
 
 brew install --cask spotify
-brew install --cask xampp
 brew install --cask sublime-text
 brew install --cask sourcetree
 brew install --cask pycharm
@@ -110,8 +110,10 @@ rm -rf fonts
 git clone https://github.com/milkbikis/powerline-shell
 mv powerline-shell ~/Documents/powerline-shell
 cd powerline-shell
-./install.py
+sudo python setup.py install
 ln -s powerline-shell.py ~/powerline-shell.py
+mkdir -p ~/.config/powerline-shell && \
+powerline-shell --generate-config > ~/.config/powerline-shell/config.json
 pip install argparse
 
 
@@ -128,8 +130,8 @@ echo 'Configuring Oh-My-Zsh...'
 echo "gem: --no-document" >> ~/.gemrc
 sudo mkdir -p "/usr/local/bin/" && ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
 
-cat config.txt > ~/.zshrc
+cat ~/Downloads/Mac-Dev-Env-Init-master/conf.txt > ~/.zshrc
 
 
 # Xcode
-xcodes install 12.2
+# xcodes install 12.2
