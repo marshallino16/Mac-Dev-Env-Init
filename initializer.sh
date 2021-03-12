@@ -37,6 +37,17 @@ brew install robotsandpencils/made/xcodes
 echo 'Package installed'
 
 
+# Install node
+# ------------
+
+echo 'Installing node...'
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+nvm install --lts
+
+echo 'Node installed'
+
+
 # Install all needed softwares
 # ----------------------------
 
@@ -120,9 +131,6 @@ pip install argparse
 # Configuration
 # -------------
 
-# Bash profile
-#touch ~/.bash_profile
-#source ~/.bash_profile
 
 # Oh-My-Zsh conf
 echo 'Configuring Oh-My-Zsh...'
@@ -131,6 +139,13 @@ echo "gem: --no-document" >> ~/.gemrc
 sudo mkdir -p "/usr/local/bin/" && ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
 
 cat ~/Downloads/Mac-Dev-Env-Init-master/conf.txt > ~/.zshrc
+
+# Screenshots
+defaults write com.apple.screencapture location ~/Downloads
+defaults write com.apple.screencapture type jpg
+defaults write com.apple.screencapture show-thumbnail -bool FALSE
+killall SystemUIServer
+
 
 
 # Xcode
